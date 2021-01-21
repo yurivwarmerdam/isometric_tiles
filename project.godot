@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="isometric_tiles"
+run/main_scene="res://scenes/Main.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+BTDebugServer="*res://addons/btree/script/bt_debug_server.gd"
+Whiteboard="*res://whiteboard.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "btree" )
+
+[network]
+
+limits/websocket_server/max_in_buffer_kb=4096
+limits/websocket_server/max_out_buffer_kb=4096
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
