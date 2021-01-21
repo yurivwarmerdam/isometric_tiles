@@ -15,22 +15,47 @@ var directions = {
 }
 
 var placed_buildings:Array
+var x_size=23
+var y_min=-23
+var y_max=23
+var y_size=y_max+abs(y_min)+1
+
 
 func _ready():
 	#revisit this....
+	for x in x_size+1:
+		placed_buildings.append([])
+		for y in y_max+1:
+			placed_buildings[x].append(-1)
+		for _y in range(y_min,0):
+			placed_buildings[x].append(-1)
+	print(placed_buildings.size())
+	
 	for factory in get_used_cells_by_id(FACTORY):
-		placed_buildings[factory.x][factory.y]="asd"
+		add_placed_building(factory,building_class.new(Vector2(factory.x,factory.y)))
+		#placed_buildings[factory.x][factory.y]=building_class.new(Vector2(factory.x,factory.y))
+		pass
+	for sawmill in get_used_cells_by_id(SAWMILL):
+		var my_building=building_class.new(sawmill)
+		add_placed_building(sawmill,my_building)
+		add_placed_building(sawmill+directions.SE,my_building)
+		placed_buildings[sawmill.x][sawmill.y]=my_building
+		placed_buildings[sawmill.x+1][sawmill.y]=my_building
 		pass
 	
 	pass
 
 func place_building(tile:Vector2):
-	set_cellv(tile,FACTORY)
-	print(tile)
+	if placed_buildings[tile.x][tile.y] ==-1:
+		set_cellv(tile,FACTORY)
+		print(tile)
+		pass
+
+func add_placed_building(pos:Vector2,building:building_class):
+	placed_buildings[pos.x][pos.y]=building
 	pass
 
-
-class my_class:
+class building_class:
 	var position
 	var claimed
 	func _init(pos,is_claimed=false):

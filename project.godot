@@ -28,11 +28,6 @@ Whiteboard="*res://whiteboard.gd"
 
 enabled=PoolStringArray( "btree" )
 
-[network]
-
-limits/websocket_server/max_in_buffer_kb=4096
-limits/websocket_server/max_out_buffer_kb=4096
-
 [rendering]
 
 environment/default_environment="res://default_env.tres"

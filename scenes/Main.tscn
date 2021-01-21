@@ -160,7 +160,7 @@ mode = 1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 48, 24 )
 format = 1
-tile_data = PoolIntArray( -786414, 3, 0, -720883, 3, 0, -720881, 3, 0, -655342, 3, 0, -589807, 3, 0, -458736, 2, 0, -458735, 0, 0, -262128, 2, 0, -65520, 0, 0, 65553, 1, 0, 720918, 0, 0 )
+tile_data = PoolIntArray( -786414, 3, 0, -720883, 3, 0, -720881, 3, 0, -655342, 3, 0, -589807, 3, 0, -458736, 2, 0, -262128, 2, 0, -65520, 0, 0, 65553, 1, 0, 720918, 0, 0 )
 script = ExtResource( 8 )
 
 [node name="Node2D" type="Node2D" parent="tiles"]
