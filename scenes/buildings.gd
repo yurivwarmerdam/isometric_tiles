@@ -26,9 +26,9 @@ func _ready():
 	for x in x_size+1:
 		placed_buildings.append([])
 		for y in y_max+1:
-			placed_buildings[x].append(-1)
+			placed_buildings[x].append(null)
 		for _y in range(y_min,0):
-			placed_buildings[x].append(-1)
+			placed_buildings[x].append(null)
 	print(placed_buildings.size())
 	
 	for factory in get_used_cells_by_id(FACTORY):
@@ -46,18 +46,19 @@ func _ready():
 	pass
 
 func place_building(tile:Vector2):
-	if placed_buildings[tile.x][tile.y] ==-1:
+	if placed_buildings[tile.x][tile.y] == null:
 		set_cellv(tile,FACTORY)
+		#add nedw building to placed_buildings
+		add_placed_building(tile,building_class.new(tile))
 		print(tile)
-		pass
 
 func add_placed_building(pos:Vector2,building:building_class):
 	placed_buildings[pos.x][pos.y]=building
 	pass
 
 class building_class:
-	var position
-	var claimed
-	func _init(pos,is_claimed=false):
+	var position:Vector2
+	var claimed:bool
+	func _init(pos:Vector2,is_claimed:bool=false):
 		position=pos
 		claimed=is_claimed
