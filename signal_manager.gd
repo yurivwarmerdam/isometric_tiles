@@ -10,13 +10,15 @@ func _ready():
 	$Label.text=str(score)
 	enemy_pool.connect("enemy_death",self,"_on_enemy_death")
 # warning-ignore:return_value_discarded
-	$test_button.connect("pressed",self,"_on_test_button_pressed")
+	$debug_button.connect("pressed",self,"_on_test_button_pressed")
 
 func _on_enemy_death():
 	update_score()
 
 func _on_test_button_pressed():
-	_on_enemy_death()
+	#_on_enemy_death()
+	
+	pass
 
 func update_score():
 	score+=1

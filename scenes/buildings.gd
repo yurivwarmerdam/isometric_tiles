@@ -48,9 +48,11 @@ func _ready():
 func place_building(tile:Vector2):
 	if placed_buildings[tile.x][tile.y] == null:
 		set_cellv(tile,FACTORY)
-		#add nedw building to placed_buildings
 		add_placed_building(tile,building_class.new(tile))
 		print(tile)
+	else:
+		$Label.text="Nice try!"
+		
 
 func add_placed_building(pos:Vector2,building:building_class):
 	placed_buildings[pos.x][pos.y]=building
@@ -62,3 +64,9 @@ class building_class:
 	func _init(pos:Vector2,is_claimed:bool=false):
 		position=pos
 		claimed=is_claimed
+
+class factory_class extends building_class:
+	var resource_amount:float
+	var resource_max:float
+	var my_bots:Array
+	pass
