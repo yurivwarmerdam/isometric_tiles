@@ -33,6 +33,11 @@ window/stretch/aspect="keep"
 
 enabled=PoolStringArray( "btree" )
 
+[network]
+
+limits/websocket_server/max_in_buffer_kb=4096
+limits/websocket_server/max_out_buffer_kb=4096
+
 [rendering]
 
 quality/2d/use_pixel_snap=true
