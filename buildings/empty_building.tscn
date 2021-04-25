@@ -9,7 +9,7 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 offset = Vector2( 1, -5 )
 region_enabled = true
-region_rect = Rect2( 26, 0, 26, 37 )
+region_rect = Rect2( 0, 0, 26, 37 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = -18.2496

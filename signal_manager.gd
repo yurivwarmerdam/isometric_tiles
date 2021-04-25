@@ -1,6 +1,5 @@
 extends Control
 
-onready var tilemap:TileMap = get_tree().get_root().get_node("main/tiles").tilemap
 onready var enemy_pool = get_tree().get_root().get_node("main/enemy_pool")
 
 var score:int

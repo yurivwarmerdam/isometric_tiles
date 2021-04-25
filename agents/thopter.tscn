@@ -1,0 +1,1677 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/btree/script/btree.gd" type="Script" id=1]
+[ext_resource path="res://art/Assets/thopter1.png" type="Texture" id=2]
+[ext_resource path="res://agents/thopter.gd" type="Script" id=3]
+
+
+[node name="thopter" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 49, 24, 50, 24 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BTREE" type="Node" parent="."]
+script = ExtResource( 1 )
+tree = {
+"connection": [ {
+"from": "sequence",
+"from_port": 0,
+"to": "task2",
+"to_port": 0
+}, {
+"from": "sequence",
+"from_port": 1,
+"to": "task7",
+"to_port": 0
+}, {
+"from": "sequence",
+"from_port": 2,
+"to": "task",
+"to_port": 0
+}, {
+"from": "sequence",
+"from_port": 3,
+"to": "task4",
+"to_port": 0
+}, {
+"from": "sequence",
+"from_port": 4,
+"to": "task8",
+"to_port": 0
+}, {
+"from": "sequence",
+"from_port": 5,
+"to": "task5",
+"to_port": 0
+}, {
+"from": "sequence",
+"from_port": 6,
+"to": "task6",
+"to_port": 0
+}, {
+"from": "sequence",
+"from_port": 7,
+"to": "task3",
+"to_port": 0
+}, {
+"from": "selector",
+"from_port": 1,
+"to": "sequence3",
+"to_port": 0
+}, {
+"from": "sequence3",
+"from_port": 0,
+"to": "task11",
+"to_port": 0
+}, {
+"from": "sequence3",
+"from_port": 1,
+"to": "sequence",
+"to_port": 0
+}, {
+"from": "selector",
+"from_port": 0,
+"to": "sequence2",
+"to_port": 0
+}, {
+"from": "sequence2",
+"from_port": 0,
+"to": "task10",
+"to_port": 0
+}, {
+"from": "sequence2",
+"from_port": 1,
+"to": "wait_node",
+"to_port": 0
+}, {
+"from": "sequence4",
+"from_port": 0,
+"to": "task12",
+"to_port": 0
+}, {
+"from": "sequence4",
+"from_port": 1,
+"to": "sequence5",
+"to_port": 0
+}, {
+"from": "sequence5",
+"from_port": 0,
+"to": "task13",
+"to_port": 0
+}, {
+"from": "sequence5",
+"from_port": 1,
+"to": "task14",
+"to_port": 0
+}, {
+"from": "sequence5",
+"from_port": 2,
+"to": "task15",
+"to_port": 0
+}, {
+"from": "sequence5",
+"from_port": 3,
+"to": "task16",
+"to_port": 0
+}, {
+"from": "sequence5",
+"from_port": 4,
+"to": "task17",
+"to_port": 0
+}, {
+"from": "sequence5",
+"from_port": 5,
+"to": "task18",
+"to_port": 0
+}, {
+"from": "sequence5",
+"from_port": 6,
+"to": "task19",
+"to_port": 0
+}, {
+"from": "sequence5",
+"from_port": 7,
+"to": "task20",
+"to_port": 0
+}, {
+"from": "root",
+"from_port": 0,
+"to": "selector",
+"to_port": 0
+}, {
+"from": "selector",
+"from_port": 2,
+"to": "sequence4",
+"to_port": 0
+} ],
+"nodes": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_is_idling",
+"offset": Vector2( 100, -320 ),
+"params": [  ],
+"size": Vector2( 299, 83 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 100.0,
+"offset": Vector2( 100, -220 ),
+"size": Vector2( 200, 60 )
+},
+"name": "wait_node",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( -80, -320 ),
+"size": Vector2( 146, 109 )
+},
+"name": "sequence2",
+"type": 2
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_is_hauling_logs",
+"offset": Vector2( 120, -100 ),
+"params": [  ],
+"size": Vector2( 346, 83 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_get_input_target_tree",
+"offset": Vector2( 420, 0 ),
+"params": [  ],
+"size": Vector2( 420, 84.9999 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_get_output_target_sawmill",
+"offset": Vector2( 420, 100 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"values": [  ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_input",
+"offset": Vector2( 420, 200 ),
+"params": [  ],
+"size": Vector2( 340, 85 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_load",
+"offset": Vector2( 420, 300 ),
+"params": [  ],
+"size": Vector2( 368.999, 85.0001 ),
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_input",
+"offset": Vector2( 420, 400 ),
+"params": [  ],
+"size": Vector2( 326.999, 84.9999 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_output",
+"offset": Vector2( 420, 500 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_unload",
+"offset": Vector2( 420, 600 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_output",
+"offset": Vector2( 420, 700 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 9,
+"offset": Vector2( 120, 20 ),
+"size": Vector2( 140, 298 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( -120, -80 ),
+"size": Vector2( 146, 109 )
+},
+"name": "sequence3",
+"type": 2
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_is_hauling_planks",
+"offset": Vector2( 120, 1040 ),
+"params": [  ],
+"size": Vector2( 362, 83 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_get_input_target_sawmill",
+"offset": Vector2( 420, 1140 ),
+"params": [  ],
+"size": Vector2( 411, 85 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_get_output_target_storage",
+"offset": Vector2( 420, 1240 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_input",
+"offset": Vector2( 420, 1340 ),
+"params": [  ],
+"size": Vector2( 340, 85 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_load",
+"offset": Vector2( 420, 1440 ),
+"params": [  ],
+"size": Vector2( 368.999, 85.0005 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_input",
+"offset": Vector2( 420, 1540 ),
+"params": [  ],
+"size": Vector2( 326.999, 85 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_output",
+"offset": Vector2( 420, 1640 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_unload",
+"offset": Vector2( 420, 1740 ),
+"params": [  ],
+"size": Vector2( 368.999, 84.9998 ),
+"values": [  ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_output",
+"offset": Vector2( 420, 1840 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 9,
+"offset": Vector2( 120, 1160 ),
+"size": Vector2( 146, 298 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( -120, 1060 ),
+"size": Vector2( 146, 109 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( -540, -220 ),
+"size": Vector2( 126, 136 )
+},
+"name": "selector",
+"type": 3
+} ],
+"data": {
+"offset": Vector2( -640, -180 ),
+"size": Vector2( 83, 60.002 )
+},
+"name": "root",
+"type": 0
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_output",
+"offset": Vector2( 420, 500 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_output",
+"offset": Vector2( 420, 700 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_get_output_target_sawmill",
+"offset": Vector2( 420, 100 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"values": [  ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_input",
+"offset": Vector2( 420, 200 ),
+"params": [  ],
+"size": Vector2( 340, 85 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_load",
+"offset": Vector2( 420, 300 ),
+"params": [  ],
+"size": Vector2( 368.999, 85.0001 ),
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_input",
+"offset": Vector2( 420, 400 ),
+"params": [  ],
+"size": Vector2( 326.999, 84.9999 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_unload",
+"offset": Vector2( 420, 600 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_is_idling",
+"offset": Vector2( 100, -320 ),
+"params": [  ],
+"size": Vector2( 299, 83 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 100.0,
+"offset": Vector2( 100, -220 ),
+"size": Vector2( 200, 60 )
+},
+"name": "wait_node",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( -80, -320 ),
+"size": Vector2( 146, 109 )
+},
+"name": "sequence2",
+"type": 2
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_is_hauling_logs",
+"offset": Vector2( 120, -100 ),
+"params": [  ],
+"size": Vector2( 346, 83 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_get_input_target_tree",
+"offset": Vector2( 420, 0 ),
+"params": [  ],
+"size": Vector2( 420, 84.9999 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_get_output_target_sawmill",
+"offset": Vector2( 420, 100 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"values": [  ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_input",
+"offset": Vector2( 420, 200 ),
+"params": [  ],
+"size": Vector2( 340, 85 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_load",
+"offset": Vector2( 420, 300 ),
+"params": [  ],
+"size": Vector2( 368.999, 85.0001 ),
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_input",
+"offset": Vector2( 420, 400 ),
+"params": [  ],
+"size": Vector2( 326.999, 84.9999 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_output",
+"offset": Vector2( 420, 500 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_unload",
+"offset": Vector2( 420, 600 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_output",
+"offset": Vector2( 420, 700 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 9,
+"offset": Vector2( 120, 20 ),
+"size": Vector2( 140, 298 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( -120, -80 ),
+"size": Vector2( 146, 109 )
+},
+"name": "sequence3",
+"type": 2
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_is_hauling_planks",
+"offset": Vector2( 120, 1040 ),
+"params": [  ],
+"size": Vector2( 362, 83 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_get_input_target_sawmill",
+"offset": Vector2( 420, 1140 ),
+"params": [  ],
+"size": Vector2( 411, 85 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_get_output_target_storage",
+"offset": Vector2( 420, 1240 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_input",
+"offset": Vector2( 420, 1340 ),
+"params": [  ],
+"size": Vector2( 340, 85 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_load",
+"offset": Vector2( 420, 1440 ),
+"params": [  ],
+"size": Vector2( 368.999, 85.0005 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_input",
+"offset": Vector2( 420, 1540 ),
+"params": [  ],
+"size": Vector2( 326.999, 85 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_output",
+"offset": Vector2( 420, 1640 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_unload",
+"offset": Vector2( 420, 1740 ),
+"params": [  ],
+"size": Vector2( 368.999, 84.9998 ),
+"values": [  ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_output",
+"offset": Vector2( 420, 1840 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 9,
+"offset": Vector2( 120, 1160 ),
+"size": Vector2( 146, 298 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( -120, 1060 ),
+"size": Vector2( 146, 109 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( -540, -220 ),
+"size": Vector2( 126, 136 )
+},
+"name": "selector",
+"type": 3
+}, {
+"data": {
+"fn": "task_clear_input",
+"offset": Vector2( 700, -320 ),
+"params": [  ],
+"size": Vector2( 318, 85 ),
+"values": [  ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 100.0,
+"offset": Vector2( 100, -220 ),
+"size": Vector2( 200, 60 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [  ],
+"data": {
+"fn": "task_is_idling",
+"offset": Vector2( 100, -320 ),
+"params": [  ],
+"size": Vector2( 299, 83 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_is_idling",
+"offset": Vector2( 100, -320 ),
+"params": [  ],
+"size": Vector2( 299, 83 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 100.0,
+"offset": Vector2( 100, -220 ),
+"size": Vector2( 200, 60 )
+},
+"name": "wait_node",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( -80, -320 ),
+"size": Vector2( 146, 109 )
+},
+"name": "sequence2",
+"type": 2
+}, {
+"child": [  ],
+"data": {
+"fn": "task_is_hauling_logs",
+"offset": Vector2( 120, -100 ),
+"params": [  ],
+"size": Vector2( 346, 83 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_get_input_target_tree",
+"offset": Vector2( 420, 0 ),
+"params": [  ],
+"size": Vector2( 420, 84.9999 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_get_output_target_sawmill",
+"offset": Vector2( 420, 100 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"values": [  ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_input",
+"offset": Vector2( 420, 200 ),
+"params": [  ],
+"size": Vector2( 340, 85 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_load",
+"offset": Vector2( 420, 300 ),
+"params": [  ],
+"size": Vector2( 368.999, 85.0001 ),
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_input",
+"offset": Vector2( 420, 400 ),
+"params": [  ],
+"size": Vector2( 326.999, 84.9999 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_output",
+"offset": Vector2( 420, 500 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_unload",
+"offset": Vector2( 420, 600 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_output",
+"offset": Vector2( 420, 700 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 9,
+"offset": Vector2( 120, 20 ),
+"size": Vector2( 140, 298 )
+},
+"name": "sequence",
+"type": 2
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_is_hauling_logs",
+"offset": Vector2( 120, -100 ),
+"params": [  ],
+"size": Vector2( 346, 83 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_get_input_target_tree",
+"offset": Vector2( 420, 0 ),
+"params": [  ],
+"size": Vector2( 420, 84.9999 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_get_output_target_sawmill",
+"offset": Vector2( 420, 100 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"values": [  ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_input",
+"offset": Vector2( 420, 200 ),
+"params": [  ],
+"size": Vector2( 340, 85 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_load",
+"offset": Vector2( 420, 300 ),
+"params": [  ],
+"size": Vector2( 368.999, 85.0001 ),
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_input",
+"offset": Vector2( 420, 400 ),
+"params": [  ],
+"size": Vector2( 326.999, 84.9999 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_output",
+"offset": Vector2( 420, 500 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_unload",
+"offset": Vector2( 420, 600 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_output",
+"offset": Vector2( 420, 700 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 9,
+"offset": Vector2( 120, 20 ),
+"size": Vector2( 140, 298 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( -120, -80 ),
+"size": Vector2( 146, 109 )
+},
+"name": "sequence3",
+"type": 2
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_is_hauling_planks",
+"offset": Vector2( 120, 1040 ),
+"params": [  ],
+"size": Vector2( 362, 83 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_get_input_target_sawmill",
+"offset": Vector2( 420, 1140 ),
+"params": [  ],
+"size": Vector2( 411, 85 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_get_output_target_storage",
+"offset": Vector2( 420, 1240 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_input",
+"offset": Vector2( 420, 1340 ),
+"params": [  ],
+"size": Vector2( 340, 85 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_load",
+"offset": Vector2( 420, 1440 ),
+"params": [  ],
+"size": Vector2( 368.999, 85.0005 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_input",
+"offset": Vector2( 420, 1540 ),
+"params": [  ],
+"size": Vector2( 326.999, 85 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_output",
+"offset": Vector2( 420, 1640 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_unload",
+"offset": Vector2( 420, 1740 ),
+"params": [  ],
+"size": Vector2( 368.999, 84.9998 ),
+"values": [  ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_output",
+"offset": Vector2( 420, 1840 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 9,
+"offset": Vector2( 120, 1160 ),
+"size": Vector2( 146, 298 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( -120, 1060 ),
+"size": Vector2( 146, 109 )
+},
+"name": "sequence4",
+"type": 2
+}, {
+"child": [  ],
+"data": {
+"fn": "task_is_hauling_planks",
+"offset": Vector2( 120, 1040 ),
+"params": [  ],
+"size": Vector2( 362, 83 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_get_input_target_sawmill",
+"offset": Vector2( 420, 1140 ),
+"params": [  ],
+"size": Vector2( 411, 85 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_get_output_target_storage",
+"offset": Vector2( 420, 1240 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_input",
+"offset": Vector2( 420, 1340 ),
+"params": [  ],
+"size": Vector2( 340, 85 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_load",
+"offset": Vector2( 420, 1440 ),
+"params": [  ],
+"size": Vector2( 368.999, 85.0005 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_input",
+"offset": Vector2( 420, 1540 ),
+"params": [  ],
+"size": Vector2( 326.999, 85 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_output",
+"offset": Vector2( 420, 1640 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_unload",
+"offset": Vector2( 420, 1740 ),
+"params": [  ],
+"size": Vector2( 368.999, 84.9998 ),
+"values": [  ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_output",
+"offset": Vector2( 420, 1840 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 9,
+"offset": Vector2( 120, 1160 ),
+"size": Vector2( 146, 298 )
+},
+"name": "sequence5",
+"type": 2
+}, {
+"child": [  ],
+"data": {
+"fn": "task_get_output_target_storage",
+"offset": Vector2( 420, 1240 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_input",
+"offset": Vector2( 420, 1340 ),
+"params": [  ],
+"size": Vector2( 340, 85 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_load",
+"offset": Vector2( 420, 1440 ),
+"params": [  ],
+"size": Vector2( 368.999, 85.0005 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_input",
+"offset": Vector2( 420, 1540 ),
+"params": [  ],
+"size": Vector2( 326.999, 85 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_output",
+"offset": Vector2( 420, 1640 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_unload",
+"offset": Vector2( 420, 1740 ),
+"params": [  ],
+"size": Vector2( 368.999, 84.9998 ),
+"values": [  ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_output",
+"offset": Vector2( 420, 1840 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task20",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_get_input_target_sawmill",
+"offset": Vector2( 420, 1140 ),
+"params": [  ],
+"size": Vector2( 411, 85 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_get_input_target_tree",
+"offset": Vector2( 420, 0 ),
+"params": [  ],
+"size": Vector2( 420, 84.9999 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+} ],
+"root": {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_is_idling",
+"offset": Vector2( 100, -320 ),
+"params": [  ],
+"size": Vector2( 299, 83 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 100.0,
+"offset": Vector2( 100, -220 ),
+"size": Vector2( 200, 60 )
+},
+"name": "wait_node",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( -80, -320 ),
+"size": Vector2( 146, 109 )
+},
+"name": "sequence2",
+"type": 2
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_is_hauling_logs",
+"offset": Vector2( 120, -100 ),
+"params": [  ],
+"size": Vector2( 346, 83 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_get_input_target_tree",
+"offset": Vector2( 420, 0 ),
+"params": [  ],
+"size": Vector2( 420, 84.9999 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_get_output_target_sawmill",
+"offset": Vector2( 420, 100 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"values": [  ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_input",
+"offset": Vector2( 420, 200 ),
+"params": [  ],
+"size": Vector2( 340, 85 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_load",
+"offset": Vector2( 420, 300 ),
+"params": [  ],
+"size": Vector2( 368.999, 85.0001 ),
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_input",
+"offset": Vector2( 420, 400 ),
+"params": [  ],
+"size": Vector2( 326.999, 84.9999 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_output",
+"offset": Vector2( 420, 500 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_unload",
+"offset": Vector2( 420, 600 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_output",
+"offset": Vector2( 420, 700 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 9,
+"offset": Vector2( 120, 20 ),
+"size": Vector2( 140, 298 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( -120, -80 ),
+"size": Vector2( 146, 109 )
+},
+"name": "sequence3",
+"type": 2
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_is_hauling_planks",
+"offset": Vector2( 120, 1040 ),
+"params": [  ],
+"size": Vector2( 362, 83 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_get_input_target_sawmill",
+"offset": Vector2( 420, 1140 ),
+"params": [  ],
+"size": Vector2( 411, 85 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_get_output_target_storage",
+"offset": Vector2( 420, 1240 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_input",
+"offset": Vector2( 420, 1340 ),
+"params": [  ],
+"size": Vector2( 340, 85 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_load",
+"offset": Vector2( 420, 1440 ),
+"params": [  ],
+"size": Vector2( 368.999, 85.0005 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_input",
+"offset": Vector2( 420, 1540 ),
+"params": [  ],
+"size": Vector2( 326.999, 85 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_move_to_output",
+"offset": Vector2( 420, 1640 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_unload",
+"offset": Vector2( 420, 1740 ),
+"params": [  ],
+"size": Vector2( 368.999, 84.9998 ),
+"values": [  ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_clear_output",
+"offset": Vector2( 420, 1840 ),
+"params": [  ],
+"size": Vector2( 368.999, 85 ),
+"values": [  ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 9,
+"offset": Vector2( 120, 1160 ),
+"size": Vector2( 146, 298 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( -120, 1060 ),
+"size": Vector2( 146, 109 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( -540, -220 ),
+"size": Vector2( 126, 136 )
+},
+"name": "selector",
+"type": 3
+} ],
+"data": {
+"offset": Vector2( -640, -180 ),
+"size": Vector2( 83, 60.002 )
+},
+"name": "root",
+"type": 0
+}
+}
+_tree_id = "3641448484215533367"

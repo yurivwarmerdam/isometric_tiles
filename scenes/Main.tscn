@@ -1,14 +1,19 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://iso_tiles.png" type="Texture" id=1]
-[ext_resource path="res://tiles.gd" type="Script" id=2]
 [ext_resource path="res://player_input_handler.gd" type="Script" id=3]
 [ext_resource path="res://enemy_pool.gd" type="Script" id=4]
 [ext_resource path="res://scenes/signal_manager.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/worker.tscn" type="PackedScene" id=6]
 [ext_resource path="res://sprites/buildings.png" type="Texture" id=7]
 [ext_resource path="res://scenes/buildings.gd" type="Script" id=8]
-[ext_resource path="res://buildings/factory.tscn" type="PackedScene" id=9]
+[ext_resource path="res://buildings/tree.tscn" type="PackedScene" id=10]
+[ext_resource path="res://buildings/sawmill.tscn" type="PackedScene" id=11]
+[ext_resource path="res://buildings/empty_building.tscn" type="PackedScene" id=12]
+[ext_resource path="res://agents/thopter.tscn" type="PackedScene" id=13]
+[ext_resource path="res://UI/thopter_slider.tscn" type="PackedScene" id=14]
+[ext_resource path="res://buildings/plank_pile.tscn" type="PackedScene" id=15]
+[ext_resource path="res://buildings/idle_hatch.tscn" type="PackedScene" id=16]
+[ext_resource path="res://buildings/factory.tscn" type="PackedScene" id=17]
 
 [sub_resource type="TileSet" id=1]
 0/name = "iso_tiles.png 0"
@@ -146,7 +151,6 @@ load_path = "res://.import/iso_tiles.png-50bb01be869ef34f316dcedcc49ced5c.stex"
 [node name="main" type="Node"]
 
 [node name="tiles" type="Node2D" parent="."]
-script = ExtResource( 2 )
 
 [node name="ground" type="TileMap" parent="tiles"]
 mode = 1
@@ -172,21 +176,95 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Node2D" type="Node2D" parent="tiles"]
+[node name="structures" type="YSort" parent="tiles"]
 
-[node name="Sprite" type="Sprite" parent="tiles/Node2D"]
+[node name="trees" type="YSort" parent="tiles/structures"]
+
+[node name="tree" parent="tiles/structures/trees" instance=ExtResource( 10 )]
+position = Vector2( 792, 48 )
+
+[node name="tree2" parent="tiles/structures/trees" instance=ExtResource( 10 )]
+position = Vector2( 648, 24 )
+
+[node name="tree3" parent="tiles/structures/trees" instance=ExtResource( 10 )]
+position = Vector2( 646, 46 )
+
+[node name="tree4" parent="tiles/structures/trees" instance=ExtResource( 10 )]
+position = Vector2( 576, 36 )
+
+[node name="tree5" parent="tiles/structures/trees" instance=ExtResource( 10 )]
+position = Vector2( 816, 36 )
+
+[node name="tree6" parent="tiles/structures/trees" instance=ExtResource( 10 )]
+position = Vector2( 768, 12 )
+
+[node name="tree7" parent="tiles/structures/trees" instance=ExtResource( 10 )]
+position = Vector2( 744, 48 )
+
+[node name="tree8" parent="tiles/structures/trees" instance=ExtResource( 10 )]
+position = Vector2( 696, 24 )
+
+[node name="tree9" parent="tiles/structures/trees" instance=ExtResource( 10 )]
+position = Vector2( 672, 84 )
+
+[node name="building" parent="tiles/structures/trees" instance=ExtResource( 12 )]
+visible = false
+
+[node name="sawmills" type="YSort" parent="tiles/structures"]
+
+[node name="sawmill" parent="tiles/structures/sawmills" instance=ExtResource( 11 )]
+position = Vector2( 552, 108 )
+
+[node name="sawmill2" parent="tiles/structures/sawmills" instance=ExtResource( 11 )]
+position = Vector2( 480, 144 )
+
+[node name="plank_piles" type="YSort" parent="tiles/structures"]
+
+[node name="plank_pile" parent="tiles/structures/plank_piles" instance=ExtResource( 15 )]
+position = Vector2( 576, 216 )
+
+[node name="idle_hatch" type="YSort" parent="tiles/structures"]
+
+[node name="building" parent="tiles/structures/idle_hatch" instance=ExtResource( 16 )]
+position = Vector2( 384, 216 )
+
+[node name="building2" parent="tiles/structures/idle_hatch" instance=ExtResource( 16 )]
+position = Vector2( 288, 288 )
+
+[node name="building3" parent="tiles/structures/idle_hatch" instance=ExtResource( 16 )]
+position = Vector2( 432, 288 )
+
+[node name="factories" type="YSort" parent="tiles/structures"]
+
+[node name="building" parent="tiles/structures/factories" instance=ExtResource( 17 )]
+position = Vector2( 456, 180 )
+
+[node name="building2" parent="tiles/structures/factories" instance=ExtResource( 17 )]
+position = Vector2( 408, 180 )
+
+[node name="building3" parent="tiles/structures/factories" instance=ExtResource( 17 )]
+position = Vector2( 264, 396 )
+
+[node name="player_input_handler" type="Node2D" parent="tiles"]
+script = ExtResource( 3 )
+
+[node name="tile_cursor" type="Node2D" parent="tiles/player_input_handler"]
+
+[node name="Sprite" type="Sprite" parent="tiles/player_input_handler/tile_cursor"]
 position = Vector2( 2, 1 )
 texture = SubResource( 3 )
 region_enabled = true
 region_rect = Rect2( 256, 0, 52, 32 )
 
-[node name="factories" type="YSort" parent="tiles"]
+[node name="agents" type="Node" parent="."]
 
-[node name="StaticBody2D" parent="tiles/factories" instance=ExtResource( 9 )]
-position = Vector2( 290, 133 )
+[node name="thopters" type="Node" parent="agents"]
 
-[node name="StaticBody2D2" parent="tiles/factories" instance=ExtResource( 9 )]
-position = Vector2( 146, 157 )
+[node name="thopter" parent="agents/thopters" instance=ExtResource( 13 )]
+position = Vector2( 194, 38 )
+
+[node name="thopter2" parent="agents/thopters" instance=ExtResource( 13 )]
+position = Vector2( 170, 98 )
 
 [node name="enemy_pool" type="Node2D" parent="."]
 script = ExtResource( 4 )
@@ -196,10 +274,6 @@ enemy_speed = 30
 [node name="Timer" type="Timer" parent="enemy_pool"]
 autostart = true
 
-[node name="player_input_handler" type="Node2D" parent="."]
-script = ExtResource( 3 )
-
 [node name="signal_manager" parent="." instance=ExtResource( 5 )]
 
-[node name="worker" parent="." instance=ExtResource( 6 )]
-position = Vector2( 636.462, 380.201 )
+[node name="thopter_slider" parent="." instance=ExtResource( 14 )]

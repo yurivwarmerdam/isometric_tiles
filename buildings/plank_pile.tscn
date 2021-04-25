@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Art/Assets/buildings.png" type="Texture" id=1]
+[ext_resource path="res://buildings/plank_pile.gd" type="Script" id=2]
+
+[node name="plank_pile" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+offset = Vector2( 1, -5 )
+region_enabled = true
+region_rect = Rect2( 104, 0, 26, 37 )
+
+[node name="Label_input" type="Label" parent="."]
+margin_left = -23.0904
+margin_top = 1.0477
+margin_right = 17.9096
+margin_bottom = 15.0477
+text = "0.0/20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
